@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="TareScreenWidget">
+        <div class='tare-screen screen'>
+            <div class='screen-content'>
+                <div class='top-content'>
+                     <span class='button back'>
+                        <i class='fa fa-angle-double-left'></i>
+                        Back
+                    </span>
+                    <h1>Print a price label</h1>
+                </div>
+                <div class="centered-content">
+                    <div class="pos-tare-label-container"></div>
+                    <div class='print-label'>
+                        Print
+                        <i class='fa fa-angle-double-right'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="PosTareLabel">
+        <div class="pos-center-align">
+            <div class="pos-tare-paper">
+                <div class="pos-tare-label">
+                    <span class="caption"><t t-esc="widget.product_name()" /></span>
+                    <h1><t t-esc="widget.format_currency(widget.product_price())" /></h1>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <t t-name="TareScreenButton">
+        <t t-if="widget.pos.config.iface_price_label">
+            <span class="control-button">
+            <i class="fa fa-print"></i>
+            Print a price label
+        </span>
+        </t>
+    </t>
+
+</templates>

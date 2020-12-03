@@ -1,0 +1,8 @@
+<odoo>
+    <template id="assets_backend" name="pos_price_label" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                 <link rel="stylesheet" href="/pos_price_generate_label/static/src/css/pos_price_generate_label.css"/>
+                <script type="text/javascript" src="/pos_price_generate_label/static/src/js/screens.js"></script>
+            </xpath>
+    </template>
+</odoo>
