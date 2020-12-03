@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
+    <t t-extend="OrderSelectorWidget"> -->
+        <t t-jquery="div.order-selector" t-operation="append">
+            <div>
+                <span class="order-button square print-price-label">
+                    Price label 
+                </span>
+            </div>
+        </t>
+    </t>
     <t t-name="TareScreenWidget">
         <div class='tare-screen screen'>
             <div class='screen-content'>
@@ -31,14 +40,4 @@
             </div>
         </div>
     </t>
-
-    <t t-name="TareScreenButton">
-        <t t-if="widget.pos.config.iface_price_label">
-            <span class="control-button">
-            <i class="fa fa-print"></i>
-            Print a price label
-        </span>
-        </t>
-    </t>
-
 </templates>

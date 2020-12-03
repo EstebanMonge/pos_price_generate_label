@@ -5,23 +5,21 @@ odoo.define('pos_price_label.screens', function (require) {
     var gui = require('point_of_sale.gui');
     var models = require('point_of_sale.models');
     var screens = require('point_of_sale.screens');
+    var chrome = require('point_of_sale.chrome');
     //var tools = require('pos_tare.tools');
 
     var QWeb = core.qweb;
 
-    // This create a new button on top of action widget. This button links to
+    // This create a new button on top of order selector widget. This button links to
     // the barcode label printing screen defined below.
-    var TareScreenButton = screens.ActionButtonWidget.extend({
-        template: 'TareScreenButton',
-
-        button_click: function () {
-            this.gui.show_screen('tare');
+    chrome.OrderSelectorWidget.include({
+        renderElement: function(){
+            var self = this;
+            this._super();
+            this.$('.print-price-label').click(function(event){
+                self.gui.show_screen('tare');
+            });
         },
-    });
-
-    screens.define_action_button({
-        'name': 'tareScreenButton',
-        'widget': TareScreenButton,
     });
 
     // This is a new screen that reads weight from the electronic scale and
